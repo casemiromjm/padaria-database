@@ -1,5 +1,7 @@
 # Padaria Database Project
 
+This project is a database design for a fictitious Portuguese bakery called *Padaria* done as part of the Database course at FEUP in 2024/25 year. More infortmation can be found in the [report](report.md).
+
 ## How to run
 ```
 git clone
