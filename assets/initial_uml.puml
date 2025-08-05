@@ -1,0 +1,110 @@
+@startuml Initial Diagram
+
+hide methods
+
+' classes
+
+class Client {
+    clientID
+    clientName
+    email
+    phoneNumber
+    address
+}
+
+class Payment {
+    paymentID
+    paymentMethod
+    paymentDate
+    paymentValue
+}
+
+class Rating {
+    ratingID
+    score
+    comment
+}
+
+class Delivery {
+    deliveryID
+    deliveryAddress
+    deliveryDate
+    deliveryStatus
+}
+
+class Employee {
+    employeeID
+    employeeName
+    job
+    salary
+    hiringDate
+}
+
+class Order {
+    orderID
+    orderDate
+    totalValue
+    orderStatus
+}
+
+class Sale {
+    saleID
+    description
+    discoutPercentage
+    startingDate
+    endingDate
+}
+
+class Shift {
+    shiftID
+    startingTime
+    endingTime
+    intervalBreak
+}
+
+class Product {
+    productID
+    name
+    price
+    stockQuantity
+    productType
+}
+
+class Ingredient {
+    ingredientID
+    name
+    stockQuantity
+    unit
+    expirationDate
+}
+
+class Supplier {
+    supplierID
+    supplierName
+    contactNumber
+    ingredientsSupplied
+}
+
+' relations
+
+Client "1" -- "many" Order
+Client "1" -- "many" Rating
+
+Payment "1" -- "1" Order
+
+Rating "1" -- "1" Order
+
+Delivery "1" -- "many" Order
+
+Shift "many" -- "many" Employee
+
+Employee "1" -- "many" Order
+Employee "many" -- "many" Product
+
+Product "many" -- "1" Order
+Product "many" -- "many" Sale
+Product "1" -- "many" Ingredient
+
+Ingredient "many" -- "1" Supplier
+
+@enduml

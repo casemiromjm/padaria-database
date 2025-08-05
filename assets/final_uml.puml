@@ -1,0 +1,138 @@
+@startuml Final Diagram
+
+hide methods
+
+' classes
+
+class Fidelity {
+    personID
+    pointsBalance
+    startingDate
+}
+
+class Person {
+    personID
+    personName
+    nif
+}
+
+class Client {
+    email
+    phoneNumber
+    address
+    birthDate
+}
+
+class Payment {
+    paymentID
+    paymentMethod
+    paymentDate
+    paymentValue
+}
+
+class Rating {
+    ratingID
+    score
+    comment
+}
+
+class Delivery {
+    deliveryID
+    deliveryAddress
+    deliveryDate
+    deliveryStatus
+}
+
+class Bakery {
+    bakeryID
+    name
+    location
+    phoneNumber
+}
+
+class Employee {
+    job
+    salary
+    hiringDate
+}
+
+class Shift {
+    shiftID
+    startingTime
+    endingTime
+    intervalBreak
+}
+
+class Order {
+    orderID
+    orderDate
+    totalValue
+    orderStatus
+}
+
+class Sale {
+    saleID
+    description
+    discountPercentage
+    startingDate
+    endingDate
+}
+
+class Product {
+    productID
+    name
+    price
+    productType
+}
+
+class Ingredient {
+    ingredientID
+    name
+    unit
+    expirationDate
+    stockQuantity
+}
+
+class Supplier {
+    supplierID
+    supplierName
+    contactNumber
+}
+
+' constraints
+
+note bottom of Sale : {startingDate < endingDate}
+' not on the final project, but for consistency i added
+note top of Shift : {startingTime < endingTime}
+note top of Ingredient : {stockQuantity >= 0}
+
+' relations
+
+Person <|-- Client
+Person <|-- Employee
+
+Fidelity "0..1" -- "1" Client
+
+Client "1" -- "many" Rating
+Client "1" -- "many" Order
+
+Payment "1" -- "1" Order
+
+Rating "1" -- "1" Order
+
+Delivery "1" -- "many" Order
+
+Bakery "1" -- "0..1" Employee : manager
+Bakery "1" -- "many" Employee
+
+Employee "1" -- "many" Order
+Employee "many" -- "many" Shift
+Employee "many" -- "many" Product
+
+Product "many" -- "1" Order
+Product "many" -- "many" Sale
+Product "1" -- "many" Ingredient
+
+Ingredient "many" -- "1" Supplier
+
+@enduml
