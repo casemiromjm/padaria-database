@@ -76,8 +76,7 @@ Key associations and multiplicities between the classes have been defined to det
 - **Ingredient — Supplier** (Many-to-One): One supplier can supply many ingredients.
 
 #### Initial UML Diagram
-<!-- TO DO -->
-![]()
+![Initial UML Diagram](/assets/Initial%20Diagram.png)
 
 ### AI Support
 For this task, we leveraged a generative AI tool (ChatGPT) to assist in refining our initial conceptual model for the Padaria bakery database. The goal was to evaluate whether the AI could offer insights or improvements to our existing model, particularly in terms of constraints, relationships, and 
@@ -270,8 +269,7 @@ We also thought it was time to do something special for our loyal customers, so 
 This loyalty program is a win-win: customers get rewarded for sticking around, and we get more repeat business. They can collect points and use them for discounts or special perks. By building this feature directly into the database, we’ve made it a breeze to run promotions and offer personalized deals. In the end, adding the Fidelity class is all about building stronger relationships with our customers and boosting loyalty.
 
 #### Refined UML Diagram
-<!-- TO DO -->
-![]()
+![Refined UML Diagram](/assets/Refined%20Diagram.png)
 
 ### Final Conceptual Model
 After the intermediary version of our project, we implemented the feedback provided by our professor.
@@ -283,8 +281,7 @@ In order to solve these problems, we added ID attributes to the “Fidelity” a
 During the final steps of preparation for this submission, we realized that some attributes in our database were redundant, while others were unnecessary. As a result, we modified the final conceptual model to ensure consistency and alignment with the overall design.
 
 #### Final UML Diagram
-<!-- TO DO -->
-![]()
+![Final UML Diagram](/assets/Final%20Diagram.png)
 
 ## Relational Schema
 ### Initial Relational Schema
